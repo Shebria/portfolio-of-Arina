@@ -32,7 +32,7 @@
   <!-- Custom Fixes -->
   <style>
     /* Fix portfolio slider images */
-    portfolio-details .portfolio-details-slider .swiper-slide {
+    .portfolio-details .portfolio-details-slider .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,8 +40,8 @@
 }
 /* Force same size for all portfolio slider images */
 .portfolio-details .portfolio-details-slider .swiper-slide img {
-  width: 400%;
-  height: 400%;   /* fixed height for consistency */
+  width: 100%;
+  height: auto;   /* fixed height for consistency */
    object-fit: contain;/* crop to fit without distortion */
   border-radius: 8px; /* optional: rounded corners */
 }
