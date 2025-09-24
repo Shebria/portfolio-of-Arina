@@ -35,8 +35,10 @@
   --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  /* Smooth scroll */
+  scroll-behavior: smooth;
 }
-
+ /
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -156,12 +158,25 @@ h6 {
   z-index: 997;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
-
+/*
 .header .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+*/
+/*----------------------------------------------
+# Custom Square Profile Image
+----------------------------------------------*/
+.header .profile-img img.square-img {
+    width: 120px;         /* Same as original or adjust as needed */
+    height: 120px;        /* Make it a square */
+    object-fit: cover;    /* Ensures image fills square without distortion */
+    border-radius: 0;     /* Removes the default circle */
+    display: block;
+    margin: 15px auto;    /* Center the image */
+    border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .header .logo {
@@ -360,6 +375,135 @@ h6 {
   display: block;
   background-color: rgba(33, 37, 41, 0.03);
 }
+/* =========================
+   Portfolio Page Styling
+   ========================= */
+
+/* Section Title */
+#portfolio .section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+  text-align: center;
+  position: relative;
+}
+
+#portfolio .section-title h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Portfolio Filters */
+.portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portfolio-filters li {
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 14px;
+  background: #f1f5f9;
+  color: var(--default-color);
+  transition: 0.3s;
+}
+
+.portfolio-filters li:hover,
+.portfolio-filters .filter-active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Portfolio Items */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.portfolio-item img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.08);
+}
+
+.portfolio-info {
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+  color: #fff;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.portfolio-info p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Portfolio Modal */
+.portfolio-modal .modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+}
+
+.portfolio-modal h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.portfolio-modal ul {
+  padding-left: 15px;
+}
+
+.portfolio-modal ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.portfolio-modal p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.portfolio-modal .btn {
+  border-radius: 25px;
+  padding: 8px 22px;
+}
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -542,6 +686,45 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/* Modern Hero Buttons */
+.hero-buttons .btn-modern {
+  background: linear-gradient(135deg, #149ddd, #1ecbe1);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.hero-buttons .btn-modern:hover {
+  background: linear-gradient(135deg, #1ecbe1, #149ddd);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Outline Button Style */
+.hero-buttons .btn-modern-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-modern-outline:hover {
+  background: #fff;
+  color: #149ddd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -721,12 +904,24 @@ section,
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
-.resume .resume-title {
-  color: var(--heading-color);
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.resume-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #feb47b; /* slightly thicker */
+  display: block; /* makes line full width */
+  padding-bottom: 0.3rem;
+  width: 60%; /* optional, adjust as needed */
+}
+
+.resume-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #feb47b; /* slightly thicker */
+  display: block; /* makes line full width */
+  padding-bottom: 0.3rem;
+  width: 60%; /* optional, adjust as needed */
 }
 
 .resume .resume-item {
@@ -787,23 +982,25 @@ section,
   text-align: center;
 }
 
+/* Modern Portfolio Filter Buttons Override */
 .portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0 10px;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
+  padding: 10px 28px !important; /* pill padding */
+  border-radius: 50px !important; /* pill shape */
+  background: #f0f0f0 !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  transition: all 0.4s ease !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+  background: linear-gradient(135deg, #ff6b6b, #ff9472) !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
 
 .portfolio .portfolio-filters li:first-child {
   margin-left: 0;
@@ -1146,7 +1343,13 @@ section,
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+  height: auto;          /* Keep aspect ratio */
+  object-fit: contain;   /* Prevent stretching/cropping */
+  max-height: 500px;     /* Optional: set a limit so very tall images don’t break layout */
+  margin: 0 auto;        /* Center image if smaller than container */
+  display: block;
 }
+
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
@@ -1200,6 +1403,17 @@ section,
 .portfolio-details .portfolio-description p {
   padding: 0;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+/* Ensure slider column behaves */
+.portfolio-details .col-lg-8 {
+  flex: 0 0 auto;
+  max-width: 66.6667%; /* 8/12 */
+}
+
+/* Ensure info column is visible */
+.portfolio-details .col-lg-4 {
+  flex: 0 0 auto;
+  max-width: 33.3333%; /* 4/12 */
 }
 
 /*--------------------------------------------------------------
