@@ -32,14 +32,19 @@
   <!-- Custom Fixes -->
   <style>
     /* Fix portfolio slider images */
-    .portfolio-details .portfolio-details-slider img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      max-height: 500px;
-      margin: 0 auto;
-      display: block;
-    }
+    portfolio-details .portfolio-details-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa; /* optional: neutral background for empty space */
+}
+/* Force same size for all portfolio slider images */
+.portfolio-details .portfolio-details-slider .swiper-slide img {
+  width: 100%;
+  height: 400%;   /* fixed height for consistency */
+   object-fit: contain;/* crop to fit without distortion */
+  border-radius: 8px; /* optional: rounded corners */
+}
 
     /* Fix project info box */
     .portfolio-details .portfolio-info {
@@ -73,7 +78,7 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets1/img/arina.jpeg" alt="" class="img-fluid rounded-circle">
+      <img src="assets1/img/arina.jpeg" alt="" class="img-fluid square-img">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -119,7 +124,7 @@
         <div class="row gy-4">
 
           <!-- Left Column: Slider -->
-          <div class="col-lg-8 col-md-12">
+          <div class="col-lg-8 col-md-12 d-flex justify-content-center">
             <div class="portfolio-details-slider swiper init-swiper">
               <script type="application/json" class="swiper-config">
                 {
