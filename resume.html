@@ -85,6 +85,55 @@
       background: linear-gradient(45deg, #0056b3, #0097a7);
       transform: scale(1.05);
     }
+/* Modern Buttons */
+.btn-modern, .btn-modern-outline {
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Primary Button */
+.btn-modern {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient Background */
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-modern:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #2575fc, #6a11cb); /* Gradient background change */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Outline Button */
+.btn-modern-outline {
+  background: transparent;
+  color: #6a11cb;
+  border: 2px solid #6a11cb;
+}
+
+.btn-modern-outline:hover {
+  background: #6a11cb;
+  color: white;
+  border: 2px solid transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Centering the buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
     body {
       background-color: #f8f9fa;
@@ -130,7 +179,7 @@
         <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="about.html"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="resume.html" class="active"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Projects</a></li>
         <li><a href="services.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
@@ -164,6 +213,7 @@
               <h4>Bachelor of Science in CSE</h4>
               <h5>2021 - 2025</h5>
               <p><em>International Islamic University Chittagong</em></p>
+                            <p>Focused on advanced computing, design, and innovation for practical solutions and amy more things.</p>
               <p>Chittagong, Kumira</p>
               <a href="results/bachelor-result.pdf" target="_blank" class="btn-result"><i class="bi bi-file-earmark-pdf"></i> View Result</a>
             </div>
@@ -172,6 +222,7 @@
               <h4>Higher Secondary Certificate</h4>
               <h5>Batch - 2020</h5>
               <p><em>Cantonment English School & College</em></p>
+                            <p>HSC</p>
               <p>Chittagong, Oxygen, Bayzid.</p>
               <a href="assets1/img/HSC_transcript.pdf" target="_blank" class="btn-result"><i class="bi bi-file-earmark-pdf"></i> View Result</a>
             </div>
@@ -194,7 +245,7 @@
               <p><em>CUET, Chittagong</em></p>
               <ul>
                 <li>Lead design, development, and production of graphic materials.</li>
-                <li>Supervise quality and accuracy of designs.</li>
+               
               </ul>
               <a href="assets1/img/SSC_certificate.pdf" target="_blank" class="btn-result"><i class="bi bi-file-earmark-pdf"></i> View Certificate</a>
             </div>
@@ -204,7 +255,7 @@
               <p><em>Published on IEEE Conference</em></p>
               <ul>
                 <li>Identified parasitized vs uninfected blood cells using CNN, ResNet50, VGG16, EfficientNetB0.</li>
-                <li>Achieved faster and more accurate diagnosis than traditional methods.</li>
+
               </ul>
               <a href="assets1/img/SSC_certificate.pdf" target="_blank" class="btn-result"><i class="bi bi-file-earmark-pdf"></i> View Paper</a>
             </div>
@@ -214,7 +265,7 @@
               <p><em>Online Platforms</em></p>
               <ul>
                 <li>Developed marketing programs (logos, brochures, infographics, presentations, ads).</li>
-                <li>Consulted with clients on design strategies.</li>
+
               </ul>
               <a href="assets1/img/dg_cer.jpeg" target="_blank" class="btn-result"><i class="bi bi-file-earmark-pdf"></i> View Certificate</a>
             </div>
@@ -224,7 +275,7 @@
               <p><em>Under Karnafuli Regiment.</em></p>
               <ul>
                 <li>Participation in camping, drills, and leadership training programs</li>
-                <li>Worked as Volunteer at many programs.</li>
+
               </ul>
               <a href="assets1/img/bncc.pdf" target="_blank" class="btn-result"><i class="bi bi-file-earmark-pdf"></i> View Certificate.</a>
             </div>
@@ -232,6 +283,10 @@
         </div>
       </div>
     </section>
+       <div class="button-container mt-5 text-center">
+      <a href="portfolio.html" class="btn-modern me-3">Go to Projects</a>
+      <a href="services.html" class="btn-modern-outline">Go to Services</a>
+    </div>
   </main>
 
   <!-- Footer -->
